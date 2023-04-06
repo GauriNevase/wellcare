@@ -1,0 +1,77 @@
+{% comment %} {% load static %}
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <div class="main">  
+        <input type="checkbox" id="chk" aria-hidden="true">
+        
+        <div class="login">
+        <form class="form">
+        <label for="chk" aria-hidden="true">Log in</label>
+        <input class="input" type="email" name="email" placeholder="Email" required="">
+        <input class="input" type="password" name="pswd" placeholder="Password" required="">
+        <button>Log in</button>
+        </form>
+        </div>
+        
+              <div class="register">
+        <form class="form">
+        <label for="chk" aria-hidden="true">Register</label>
+        <input class="input" type="text" name="txt" placeholder="Username" required="">
+        <input class="input" type="password" name="pswd" placeholder="Password" required="">
+        <input class="input" type="password" name="pswd" placeholder="ConPassword" required="">
+        <button>Register</button>
+        </form>
+        </div>
+        </div>
+</body>
+</html> {% endcomment %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://www.msn.com/en-in/play/fish-merge-frvr/cg-9mxwbd9sw3pr?ocid=winpsearchboxexpcta2&pc=DSBPC&cvid=7e4807ba7ab64c9eb0ee68530e24f2f2&nclid=6FF21382ACCCF7B7ACB4077DDAF67E0D&ts=1679217237269&nclidts=1679217237&tsms=269">Heelooo</a>
+    {% csrf_token %}
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong> Message :</strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        <div class="login" name="login">
+            <form class="form" action="" method="post">
+                {% csrf_token %}
+            <label for="chk" aria-hidden="true">Log in</label>
+            <input class="input" type="text" name="username" placeholder="Email" required="">
+            <input class="input" type="password" name="pass" placeholder="Password" required="">
+            <button name="login" type="submit">Log in</button>
+            </form>
+        </div>
+
+        <div class="register",name="signup">
+            <form class="form" action="" method="post">
+            {% csrf_token %}
+            <label for="chk" aria-hidden="true">Register</label>
+            <input class="input" type="text" name="txt" placeholder="Username" required="">
+            <input class="input" type="email" name="email" placeholder="Email" required="">
+            <input class="input" type="password" name="pswd" placeholder="Password" required="">
+            <input class="input" type="password" name="Cpswd" placeholder="Confirm Password" required="">
+            <button name="signup" type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
