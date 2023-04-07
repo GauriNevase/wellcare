@@ -21,5 +21,5 @@ urlpatterns = [
     path('diary/',include('diary.urls')),
     path('blog/', include('blog.urls')),
     path('chatbot/',include('chatbot.urls')),
-    # path('',include('home.urls'))
+    path('',include('home.urls'))
 ]

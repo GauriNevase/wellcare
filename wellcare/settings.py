@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'diary',
     'blog',
     'chatbot',
+    'home',
 ]
 
 MIDDLEWARE = [

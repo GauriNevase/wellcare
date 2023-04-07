@@ -8,3 +8,4 @@ class PostList(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog_post_detail.html'
+
