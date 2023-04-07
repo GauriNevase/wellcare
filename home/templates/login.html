@@ -8,23 +8,26 @@
     <div class="main">  
         <input type="checkbox" id="chk" aria-hidden="true">
         
-        <div class="login">
-        <form class="form">
-        <label for="chk" aria-hidden="true">Log in</label>
-        <input class="input" type="email" name="email" placeholder="Email" required="">
-        <input class="input" type="password" name="pswd" placeholder="Password" required="">
-        <button>Log in</button>
-        </form>
+        <div class="login" name="login">
+            <form class="form" action="" method="post">
+                {% csrf_token %}
+            <label for="chk" aria-hidden="true">Log in</label>
+            <input class="input" type="text" name="username" placeholder="Email" required="">
+            <input class="input" type="password" name="pass" placeholder="Password" required="">
+            <button name="login" type="submit">Log in</button>
+            </form>
         </div>
-        
-              <div class="register">
-        <form class="form">
-        <label for="chk" aria-hidden="true">Register</label>
-        <input class="input" type="text" name="txt" placeholder="Username" required="">
-        <input class="input" type="email" name="email" placeholder="Email" required="">
-        <input class="input" type="password" name="pswd" placeholder="Password" required="">
-        <button>Register</button>
-        </form>
+
+        <div class="register",name="signup">
+            <form class="form" action="" method="post">
+            {% csrf_token %}
+            <label for="chk" aria-hidden="true">Register</label>
+            <input class="input" type="text" name="txt" placeholder="Username" required="">
+            <input class="input" type="email" name="email" placeholder="Email" required="">
+            <input class="input" type="password" name="pswd" placeholder="Password" required="">
+            <input class="input" type="password" name="Cpswd" placeholder="Confirm Password" required="">
+            <button name="signup" type="submit">Register</button>
+            </form>
         </div>
         </div>
 </body>

@@ -5,10 +5,10 @@ from diary import views as dv
 from chatbot import views as cv
 
 urlpatterns = [
-    path('index/', views.index, name="index"),
+    path('', views.index, name="index"),
     path('community/', views.index2, name="community"),
-    path('',views.login ,name="login"),
-    path('',views.afterlogin,name="aftelogin"),
+    path('login/',views.login1 ,name="login"),
+    path('afterlogin',views.afterlogin,name="afterlogin"),
     path('blog/', bv.PostList.as_view(), name='blog_home'),
     path('<slug:slug>/', bv.PostDetail.as_view(), name='blog_post_detail'),
     path('diary/',dv.index,name='diary_home'),
