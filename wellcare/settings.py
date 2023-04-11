@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-c_+7keq-90qxqc+dg1$1$t^h4cv!38h3=u@=&uh5ucvb70ye5o
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Application definition
 
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'blog',
     'chatbot',
     'home',
+    'sos',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
