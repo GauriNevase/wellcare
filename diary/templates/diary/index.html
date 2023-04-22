@@ -31,13 +31,13 @@
                 </div>
             </article>
 
-            {% for Diary_entry in entries %}
+            {% for i in entries %}
                 <article class="media">
                     <div class="media-content">
                         <div class="content">
                             <p>
-                                <strong>{{ Diary_entry.date_posted }}</strong>
-                                <br> {{ Diary_entry.text }}
+                                <strong>{{ i.user }} | {{ i.date }}</strong>
+                                <br> {{ i.context }}
                             </p>
                         </div>
                     </div>
