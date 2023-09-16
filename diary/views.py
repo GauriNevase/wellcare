@@ -15,4 +15,5 @@ def add(request):
         obj = Diary(user=request.user,context=note)
         obj.save()
         return redirect('diary_home')
+        redirect('diary_home')
     return render(request, 'diary/add.html')

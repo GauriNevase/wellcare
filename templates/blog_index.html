@@ -7,138 +7,15 @@
         font-size: 18px;
         background-color: #fdfdfd;
     }
-    .container{
-        margin-top:55px;
-    }
-
-    .head_text {
-        color: white;
-    }
-
-    .card {
+    .container2 {
+        position: absolute;
+        left: 200px;
         box-shadow: 0 16px 48px #E3E7EB;
     }
-    .container2{
-        height: 100px;
-        width: 1300px;
-        border: none;
-        background-color: #c8f3fa;
-       
-        align-items: center;
-        
-      
-      }
-      .navbar2{
-        width: 115%;
-        height: 18vh;
-        margin:auto;
-        display: flex;
-        align-items: center;
-        font-size: large;
-        
-      }
-      .logo{
-        width: 200px;
-        cursor: pointer;
-        padding-left: 10px;
-      }
-      
-      nav{
-        flex:1.5;
-        padding-left: 440px;
-      
-      }
-      nav ul li{
-        display: inline-block;
-        list-style: none;
-        margin: 0px 23px;
-      
-      }
-      
-      .content{
-        background-color: #b8e5fa;
-        
-        
-      }
-      nav ul li a{
-        text-decoration: none;
-        color: #023047;
-      }
-      
-       
-      .cta svg {
-        position: relative;
-        top: 0;
-        margin-left: 10px;
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke: #234567;
-        stroke-width: 2;
-        transform: translateX(-5px);
-        transition: all 0.3s ease;
-      }
-       
-      .cta:hover:before {
-        width: 100%;
-        background: #b1dae7;
-      }
-       
-      .cta:hover svg {
-        transform: translateX(0);
-      }
-       
-      .cta:active {
-        transform: scale(0.95);
-      }
-      .button1 {
-        font-size: 14px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        display: inline-block;
-        text-align: center;
-        font-weight: bold;
-        padding: 0.7em 2em;
-        border: 2px solid #FF0072;
-        border-radius: 22px;
-        position: relative;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-        color: #FF0072;
-        text-decoration: none;
-        transition: 0.3s ease all;
-        z-index: 1;
-        font-weight: 1000;
-        
-      }
-      
-      .button1:before {
-        transition: 0.5s all ease;
+    .card-mb-4{
         position: absolute;
-        top: 0;
-        left: 50%;
-        right: 50%;
-        bottom: 0;
-        opacity: 0;
-        content: '';
-        background-color: #FF0072;
-        z-index: -1;
-        border-radius: 22px;
-      }
-      
-      .button1:hover, .button1:focus {
-        color: white;
-      }
-      
-      .button1:hover:before, .button1:focus:before {
-        transition: 0.5s all ease;
-        left: 0;
-        right: 0;
-        opacity: 1;
-      }
-      
-      .button1:active {
-        transform: scale(0.9);
-      }
+        left:100px;
+    }
 </style>
 
 {% comment %} <header class="masthead">
@@ -147,8 +24,8 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to Wellcare Articles </h3>
-                    
+                    <h3 class="site-heading-my-4-mt-3-text-white"> Welcome to wellcare Blog </h3>
+                    <p class="text-light">We Love Django As much as you do..! &nbsp
                     </p>
                 </div>
             </div>
@@ -188,8 +65,7 @@
             </div>
             {% endfor %}
         </div>
-        
+     
     </div>
-</div>
 </div>
 {%endblock%}
