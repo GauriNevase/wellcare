@@ -1,4 +1,4 @@
-{% load static%}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,65 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dear Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
     <style>
-        *{
-            margin:0;
-            padding:0;
-        }
-        .hero-is-primary{
-            z-index: 2;
-        }
-        .title{
-            position: absolute;
-            top: 50px;
-            left: 60px;
-            color: white;
-        }
-        .control{
-            position: absolute;
-            top: 120px;
-            left: 80px;
-        }
-        .control2{
-            position: absolute;
-            bottom: 10px;
-            right: 80px;
-        }
-        button {
-            background-color: #eee;
-            border: none;
-            padding: 1rem;
-            font-size: 1rem;
-            width: 10em;
-            border-radius: 1rem;
-            color: lightcoral;
-            box-shadow: 0 0.4rem #dfd9d9;
+        .btn-donate {
+            --clr-font-main: hsla(0 0% 20% / 100);
+            --btn-bg-1: hsla(194 100% 69% / 1);
+            --btn-bg-2: hsla(217 100% 56% / 1);
+            --btn-bg-color: hsla(360 100% 100% / 1);
+            --radii: 0.5em;
             cursor: pointer;
-            font-weight:700;
-           }
-           
-           button:active {
-            color: white;
-            box-shadow: 0 0.2rem #dfd9d9;
-            transform: translateY(0.2rem);
-           }
-           
-           button:hover:not(:disabled) {
-            background: lightcoral;
-            color: white;
-            text-shadow: 0 0.1rem #bcb4b4;
-           }
-           
-           button:disabled {
-            cursor: auto;
-            color: grey;
-           }
+            padding: 0.9em 1.4em;
+            min-width: 120px;
+            min-height: 44px;
+            font-size: var(--size, 1rem);
+            font-family: "Segoe UI", system-ui, sans-serif;
+            font-weight: 500;
+            transition: 0.8s;
+            background-size: 280% auto;
+            background-image: linear-gradient(325deg, var(--btn-bg-2) 0%, var(--btn-bg-1) 55%, var(--btn-bg-2) 90%);
+            border: none;
+            border-radius: var(--radii);
+            color: var(--btn-bg-color);
+            box-shadow: 0px 0px 20px rgba(71, 184, 255, 0.5), 0px 5px 5px -1px rgba(58, 125, 233, 0.25), inset 4px 4px 8px rgba(175, 230, 255, 0.5), inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+          }
+          
+          .btn-donate:hover {
+            background-position: right top;
+          }
+          
+          .btn-donate:is(:focus, :focus-within,:active) {
+            outline: none;
+            box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+          }
+          
+          @media (prefers-reduced-motion: reduce) {
+            .btn-donate {
+              transition: linear;
+            }
+          }
+          
     </style>
 </head>
 
 <body>
-    <section class="hero-is-primary">
-        <img src="{% static 'add2.jpg' %}" style="width:100%;height:100%">
+    <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
@@ -78,17 +63,10 @@
 
         <form method="POST" action="{% url 'add' %}">
                 {% csrf_token %}
-                <div class="field">
-                    <div class="control">
-                        {{ form.text }}
-                    </div>
-                </div>
-
-                <div class="field is-grouped is-grouped-right">
-                    <div class="control2">
-                        <button class="button is-link">Submit</button>
-                    </div>
-                </div>
+                <input name="comment" style="width: 1000px; height:300px" placeholder="Share your thoughts...">
+                <button class="btn-donate">
+                    Submit
+                </button>
         </form>
         </div>
 

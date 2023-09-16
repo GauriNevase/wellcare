@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'blog',
     'chatbot',
     'home',
+    'crispy_forms',
+    'chartapp',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Calcutta'
 
 USE_I18N = True
 
