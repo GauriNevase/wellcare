@@ -14,6 +14,10 @@ def index2(request):
     return render(request, "Community.html")
 def afterlogin(request):
     return render(request,"afterlogin.html")
+def therapist(request):
+    return render(request, "therapist.html")
+def games(request):
+    return render(request, "games.html")
 
 
 def login1(request):
