@@ -3,6 +3,7 @@ from django.shortcuts import render,redirect
 from .models import *
 from .forms import EntryForm
 
+
 def index(request):
     entries = Diary.objects.filter(user=request.user)
     context = {'entries' : entries}
@@ -10,10 +11,13 @@ def index(request):
 
 def add(request):
     if request.method == 'POST':
-        note = request.POST.get('comment')
-        print(note)
-        obj = Diary(user=request.user,context=note)
-        obj.save()
-        return redirect('diary_home')
-        redirect('diary_home')
-    return render(request, 'diary/add.html')
+        form = EntryForm(request.POST)
+        if form.is_valid():
+            new_entry = form.save(commit=False)
+            new_entry.user = request.user
+            new_entry.save()
+            return redirect('diary_home')
+    else:
+        form = EntryForm()
+    
+    return render(request, 'diary/add.html', {'form': form})

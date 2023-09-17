@@ -7,6 +7,13 @@
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'style3.css' %}">
     <style>
+      body {
+            font-family: "Roboto", sans-serif;
+            font-size: 18px;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 0;
+        }
       nav{
         flex:1.5;
         padding-left: 340px;
@@ -34,13 +41,14 @@
             <div class="navbar">
                 <img src="{% static 'logo.png' %}" class="logo">
 
-                <img src="" class="logo">
+                <img class="logo">
                     <nav>
                         <ul>
                             <li><a href="login.html">Home</a></li>
                             <li><a href="blog">Articles</a></li>
-                            <li><a href="">Connect with Therapist</a></li>
-                            <button class="button1"> SOS</button>
+                            <!-- <li><a href="">Connect with Therapist</a></li> -->
+                            <!-- <button class="button1"> SOS</button> -->
+                            <li><a href="{% url 'login' %}">{{ user.username }}(Logout)</a></li>
                             
                             
 
@@ -151,7 +159,7 @@
       </div>
             <div class="wave2">
       </div>
-      <button class="button3" onclick="chartapp()">
+      <button class="button3" onclick="diary()">
         Start
     </button>
     <div class="headcontainer3">
@@ -161,54 +169,50 @@
         <p>Share your intrusive thoughts and pour out your <br>feelings in your personal digital diary</p>
       </div>
       </div>
-      <button class="button4" onclick = "Diary()">
+      <button class="button4" onclick = "diary()">
         Start
     </button>
 
-    <div class="info11">
+    <!-- <div class="info11">
       <h1>Mental Quiz</h1>
     <div class="info12">
       <p>Examine yourself with a quick but prepared by <br>professionals and get a self check about your mental health</p>
     </div>
-    </div>
-    <button class="button7">
+    </div> -->
+    <!-- <button class="button7">
       Start
-  </button>
-  <div class = "vertical3"></div>
+  </button> -->
+  <!-- <div class = "vertical3"></div>
     <div class="wave3">
-    </div>
+    </div> -->
     </div>
     <div class="headcontainer5">
       <div class="info9">
-        <h1>Games</h1>
+        <h1>Articles</h1>
       </div>
       <div class="info10">
-        <p>Engage&nbsp;yourself&nbsp;with&nbsp;exciting&nbsp;games&nbsp;and&nbsp;calm your anger down in few minutes</p>
+        <p>Read&nbsp;informative&nbsp;articles&nbsp;on diverse &nbsp;topicss&nbsp;and&nbsp;share knowledge</p>
       </div>
-      <button class="button6" onclick = "Games()">
+      <button class="button6" onclick = "blog()">
         Start
     </button>
     </div>
     <script>
-      function Diary(){
-        window.location.href="diary.html";
+      function diary(){
+        window.location.href="/diary/index.html";
       }
       function comm(){
         window.location.href="comm.html";
       }
-      function sos(){
-        window.location.href="sos.html";
-      }
-      function Games(){
-        window.location.href="games.html";
+     
+
+      function blog(){
+        window.location.href="blog";
       }
       function chatbot(){
         window.location.href="chatbot/index.html";
       }
-      function chartapp(){
-        window.location.href="diary.html";
-      }
-    
+      
     </script>
     </body>
     </html>

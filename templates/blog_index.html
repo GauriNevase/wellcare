@@ -6,17 +6,85 @@
         font-family: "Roboto", sans-serif;
         font-size: 18px;
         background-color: #fdfdfd;
+        margin: 0;
+        /* Remove default margin */
     }
-    .container2 {
-        position: absolute;
-        left: 200px;
-        box-shadow: 0 16px 48px #E3E7EB;
+
+    /* Container for the entire page */
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        /* Stack containers vertically */
+        min-height: 100vh;
+        /* Minimum height to cover the viewport */
     }
-    .card-mb-4{
-        position: absolute;
-        left:100px;
+
+    /* Navbar styling */
+    .navbar2 {
+        width: 115%;
+        height: 15vh;
+        margin: auto;
+        font-size: large;
+        background-color: white;
+        color: skyblue;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        /* Align logo and links at the ends */
+        align-items: center;
+        /* Vertically center items */
+    }
+
+
+    /* Navbar logo styling */
+    .navbar2 .logo {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    /* Navbar navigation links styling */
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar2 ul li {
+        margin-right: 20px;
+    }
+
+    .navbar2 ul li:last-child {
+        margin-right: 0;
+    }
+
+    .navbar2 a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    .navbar2 a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar2 a.active {
+        color: #ff5733;
+    }
+
+    /* Content container */
+    .content-container {
+        flex: 1;
+        /* Expand to fill available space */
+        padding: 20px;
+        /* Add padding as needed */
+    }
+
+    .card-mb-4 {
+        margin-left: 100px;
     }
 </style>
+
 
 {% comment %} <header class="masthead">
     <div class="overlay"></div>
@@ -37,35 +105,34 @@
         <img src="{% static 'logo.png' %}" class="logo">
 
         <img src="" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="afterlogin.html">Home</a></li>
-                    <li><a href="blog_index.html">Articles</a></li>
-                    <button class="button1" onclick="sos()"> SOS</button>
-                    <li><a href="login.html">{{ user.username }}(Logout)</a></li>
-                    
-                    
+        <nav>
+            <ul>
+                <li><a href="{% url 'afterlogin' %}">Home</a></li>
+                <li><a href="#">Article</a></li>
+                <li><a href="{% url 'login' %}">{{ user.username }}(Logout)</a></li>
 
-                </ul>
-            </nav>
+
+
+            </ul>
+        </nav>
         <img src="" class="">
     </div>
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
-            {% for post in post_list %}
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'blog_post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for post in post_list %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                        <p class="card-text">{{post.content|slice:":200" }}</p>
+                        <a href="{% url 'blog_post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+
         </div>
-     
     </div>
-</div>
-{%endblock%}
+    {%endblock%}
