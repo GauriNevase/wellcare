@@ -15,16 +15,10 @@ from django.shortcuts import redirect, render
 def index(request):
     return render(request, "index.html")
 def index2(request):
-
     return render(request, "community.html")
 def afterlogin(request):
     return render(request,"afterlogin.html")
-def therapist(request):
-    return render(request, "therapist.html")
-def games(request):
-    return render(request, "games.html")
-def sos(request):
-    return render(request, "sos.html")
+
 
 def ac(request):
     if request.method=='POST':
@@ -66,40 +60,6 @@ def anger(request):
     context = {'Comment1':Comment1}
     return render(request, "aissues.html",context)
 
-
-
-
-
-
-def sos(request):
-
-    if so12.objects.filter(user=request.user) == '':
-        return render(request, "sos2.html")
-           
-    else: 
-        if request.method=='POST':
-            La = request.POST.get('La')
-            Wp = request.POST.get('Fp')
-            Sn = request.POST.get('Sn')
-            Ws = request.POST.get('Ws')
-            Cn = request.POST.get('Ca')
-            user = request.user
-            try:
-                entries = so12.objects.filter(user=request.user)
-                entries.delete()
-            except:
-                pass
-            person = so12(user=user,La=La,Fp=Wp,Sn=Sn,Ws=Ws,Ca=Cn)
-            person.save()
-            return redirect('sos2')
-        return render(request, "sos.html") 
-        
-    
-def sos2(request):
-    
-    SOS1 = so12.objects.filter(user = request.user )
-    context = {'sos1':SOS1}
-    return render(request, "sos2.html", context)
 
 def Hi(request):
     if request.method=='POST':
@@ -176,6 +136,3 @@ def login1(request):
 
     else:
         return render(request, 'login.html')
-    
-def chartapp(request):
-    return render(request, "chartapp/index.html")

@@ -56,13 +56,14 @@ class CommentAI(models.Model):
     def __str__(self):
         return str(self.user)
 
-class so12(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    La = models.CharField(max_length=100)
-    Fp = models.CharField(max_length=100,default="")
-    Sn = models.CharField(max_length=100,default="")
-    Ws = models.CharField(max_length=100,default="")
-    Ca = models.CharField(max_length=100,default="")
+# class so12(models.Model):
+#     user = models.ForeignKey(User,on_delete=models.CASCADE)
+#     La = models.CharField(max_length=100)
+#     Fp = models.CharField(max_length=100,default="")
+#     Sn = models.CharField(max_length=100,default="")
+#     Ws = models.CharField(max_length=100,default="")
+#     Ca = models.CharField(max_length=100,default="")
 
     def str(self):
         return f"{self.La} {self.Fp} {self.Sn} {self.Ws} {self.Ca}"
+    

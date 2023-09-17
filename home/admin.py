@@ -8,4 +8,5 @@ admin.site.register(CommentAI)
 admin.site.register(CommentHE)
 admin.site.register(CommentMS)
 admin.site.register(CommentRE)
-admin.site.register(so12)
+# admin.site.register(so12)
+
